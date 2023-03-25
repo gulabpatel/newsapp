@@ -30,8 +30,8 @@ jobs:
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@v4
       with:
-        ACCESS_TOKEN: ${{secrets.ACCESS_TOKEN}}
-        BASE_BRANCH: development
-        BRANCH: main
-        FOLDER: build
-        SINGLE_COMMIT: true
+        token: ${{secrets.ACCESS_TOKEN}}
+        # BASE_BRANCH: development
+        branch: main
+        folder: build
+        single-commit: true
