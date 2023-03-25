@@ -30,4 +30,8 @@ jobs:
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@v4
       with:
-        folder: build # The folder the action should deploy.
+        ACCESS_TOKEN: ${{secrets.ACCESS_TOKEN}}
+        BASE_BRANCH: development
+        BRANCH: main
+        FOLDER: build
+        SINGLE_COMMIT: true
