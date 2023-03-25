@@ -1,10 +1,7 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 
-
-// export default class Navbar extends Component {
 const Navbar = () => {
-
   // render() {
     return (
       <div>
@@ -19,7 +16,6 @@ const Navbar = () => {
                 <li className="nav-item"><Link className="nav-link " aria-current="page" to="/">Home</Link></li>
                 <li className="nav-item"><Link className="nav-link" to="/business">Business</Link></li>
                 <li className="nav-item"><Link className="nav-link" to="/entertainment">Entertainment</Link></li>
-                <li className="nav-item"><Link className="nav-link" to="/general">General</Link></li>
                 <li className="nav-item"><Link className="nav-link" to="/health">Health</Link></li>
                 <li className="nav-item"><Link className="nav-link" to="/science">Science</Link></li>
                 <li className="nav-item"><Link className="nav-link" to="/sports">Sports</Link></li>

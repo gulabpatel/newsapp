@@ -11,9 +11,9 @@ const NewsItems = (props)=>{
                 justifyContent:'flex-end',
                 position:'absolute',
                 right:'0'}}>
-                <span className="position-absolute top-0 translate-middle badge rounded-pill bg-danger" style={{left:'90%', zIndex:'1'}}>
+                <span className="position-absolute top-0 translate-middle badge rounded-pill bg-danger" style={{left:'90%', zIndex:'1', height:'-webkit-fill-available'}}>
                             {source}</span></div>
-                    <img src={imgurl ? imgurl : "https://www.moneycontrol.com/news/business/markets/hot-stocks-mrs-bectors-food-specialities-tata-steel-persistent-systems-can-give-at-least-10-return-in-short-term-heres-why-9895821.html"} className="card-img-top" alt="wait, loading..." />
+                    <img src={imgurl ? imgurl : "https://www.moneycontrol.com/news/business/markets/hot-stocks-mrs-bectors-food-specialities-tata-steel-persistent-systems-can-give-at-least-10-return-in-short-term-heres-why-9895821.html"} className="card-img-top" height='270px' alt="wait, loading..." />
                     <div className="card-body">
                         <h5 className="card-title">{title}</h5>
                         <p className='card-text'>{description}</p>

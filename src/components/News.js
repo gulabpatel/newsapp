@@ -9,8 +9,6 @@ const News = (props)=>{
     const [loading, setLoading] = useState(true);
     const [page, setPage] = useState(1);
     const [totalResults, setTotalResults] = useState(0)
-    // document.title = `${this.capitalizeFirstLetter(props.category)} - NewsMonkey`;
-
     const capitalizeFirstLetter = (string) =>{
         return string.charAt(0).toUpperCase() + string.slice(1);
     }
@@ -26,8 +24,10 @@ const News = (props)=>{
         setTotalResults(parseData.totalResults);
         setLoading(false);
         props.setProgress(100);
+        
     }
     useEffect(()=>{
+        document.title = `${capitalizeFirstLetter(props.category)} - NewsMonkey`;
         updateNews();
         // eslint-disable-next-line
         },[])
@@ -64,7 +64,7 @@ const News = (props)=>{
                         {/* !loading && */}
                         {articles && articles.map((element) => {
                             return <div className='col-md-4' key={element.url}>
-                                <NewsItems title={element.title ? element.title : ""} description={element.description ? element.description.slice(0, 90) : ""} imgurl={element.urlToImage} newsurl={element.url} author={element.author?element.author:"unknown"} date={element.publishedAt?new Date(element.publishedAt).toGMTString():"unknown"} source={element.source.id?element.source.id:"unknown"}/>
+                                 <NewsItems title={element.title ? element.title : ""} description={element.description ? element.description.slice(0, 90) : ""} imgurl={element.urlToImage} newsurl={element.url} author={element.author?element.author:"unknown"} date={element.publishedAt?new Date(element.publishedAt).toGMTString():"unknown"} /> {/*source={element.source.id?element.source.id:"unknown"} */}
                             </div>
 
                         })}
