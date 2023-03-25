@@ -1,9 +1,8 @@
 name: Deploy using Github Action
 
-on: push
-  #   branches: [ "main" ]
-  # pull_request:
-  #   branches: [ "main" ]
+on: 
+  push:
+    branches: [ "main" ]
 
 jobs:
   build:
@@ -14,7 +13,8 @@ jobs:
         node-version: [18.x]
 
     steps:
-    - uses: actions/checkout@v3
+    - name:  Check out the repo
+      uses: actions/checkout@v3
       with:
         lfs: true
     - name: Use Node.js ${{matrix.node-version}}
@@ -29,8 +29,5 @@ jobs:
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@v4
       with:
-        token: ${{secrets.ACCESS_TOKEN}}
-        # BASE_BRANCH: development
-        branch: main
+        branch: gh-pages
         folder: build
-        single-commit: true
